@@ -140,7 +140,7 @@ class Librarian(Person):
                 costumer_1 = costumer
                 break
 
-        if numcost >= len(costumerList().costumers):
+        if numcost + 1 > len(costumerList().costumers):
             time.sleep(0.5)
             print("costumer does not exist")
 
@@ -148,13 +148,13 @@ class Librarian(Person):
         for book in Catalog().books:
                 numbooks += 1
                 if book.showIsbn() == number:
-                    costumer_1.books.append(book)
+                    
                     loanAdministration().AddBook(book)
                     print("book {} lent to {} with id {}".format(book.showTitle(),costumer_1.given_name,costumer_1.showNumber()))
                     break
                     
             
-        if numbooks >= len(Catalog().books):
+        if numbooks + 1 > len(Catalog().books):
             time.sleep(0.5)
             print("book does not exist")
 
@@ -180,7 +180,7 @@ class Librarian(Person):
                 
                 break
 
-        if x >= len(Catalog().books):
+        if x >  len(Catalog().books):
             print('book does not exist')
                 
        
