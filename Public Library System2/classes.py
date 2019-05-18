@@ -180,7 +180,7 @@ class Librarian(Person):
                 
                 break
 
-        if x >  len(Catalog().books):
+        if x + 1 >  len(Catalog().books):
             print('book does not exist')
                 
        
